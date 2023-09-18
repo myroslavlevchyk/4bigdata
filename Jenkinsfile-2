@@ -25,7 +25,9 @@ pipeline {
                     if (params.choiceServise == 'Deploy environment') 
                         {
                         sh '''                 
-                        cd /<PATH>/final_task/
+                        // cd /<PATH>/final_task/
+                        pwd
+                        ls -la
                         ansible-playbook playbook2.yml   
                         echo "PRINT Ansible#2>>> DEPLOY"
                         '''   
@@ -40,7 +42,7 @@ pipeline {
                     if (params.choiceServise == 'Delete environment') 
                         {
                         sh '''                 
-                        cd /<PATH>/final_task
+                        // cd /<PATH>/final_task
                         ansible-playbook playbook4.yml                         
                         echo "PRINT Ansible#4>>> DELETE"
                         '''   
