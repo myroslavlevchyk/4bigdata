@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Env FINAL') {
             steps {
-                sh 'cd /<PATH>/final_task'
+//                sh 'cd /<PATH>/final_task'
                 echo "choiceServise: ${params.choiceServise}"                
                 echo "petclinic: ${params.petclinic}"                
             }
