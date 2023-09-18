@@ -24,8 +24,7 @@ pipeline {
                 script {
                     if (params.choiceServise == 'Deploy environment') 
                         {
-                        sh '''                 
-                        // cd /<PATH>/final_task/
+                        sh '''                                         
                         pwd
                         ls -la
                         ansible-playbook playbook2.yml   
