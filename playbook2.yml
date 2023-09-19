@@ -45,6 +45,7 @@
                 spec:
                   containers:
                   - image: "{{ DOCKER_VERSION }}"
+                  # - image: myroslavlevchyk/petclinic:latest
                     name: petclinic
                     ports:
                     - containerPort: 8080
