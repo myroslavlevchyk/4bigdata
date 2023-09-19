@@ -4,7 +4,7 @@
 
    tasks:
      - name: Terraform Plan the destruction
-       shell: chdir=./k8s terraform plan -destroy -out destroyplan
+       shell: chdir=/home/myroslav/final_task/4bigdata/k8s terraform plan -destroy -out destroyplan
 
      - name: Terraform Destroy
-       shell: chdir=./k8s terraform apply destroyplan
+       shell: chdir=/home/myroslav/final_task/4bigdata/k8s terraform apply destroyplan

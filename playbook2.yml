@@ -7,13 +7,13 @@
 
    tasks:
       - name: Terraform Create the infrastructure (init)
-        command: chdir=./k8s terraform init
+        command: chdir=/home/myroslav/final_task/4bigdata/k8s terraform init
 
       - name: Terraform Create the infrastructure (apply)
-        shell: chdir=./k8s terraform apply -auto-approve
+        shell: chdir=/home/myroslav/final_task/4bigdata/k8s terraform apply -auto-approve
 
-      - name: Gcloud container clusters get-credentials
-        shell: chdir=./k8s gcloud container clusters get-credentials $(terraform output -raw kubernetes_cluster_name) --region $(terraform output -raw region)
+ #     - name: Gcloud container clusters get-credentials
+ #       shell: chdir=/home/myroslav/final_task/4bigdata/k8s gcloud container clusters get-credentials $(terraform output -raw kubernetes_cluster_name) --region $(terraform output -raw region)
 
       - name: Create a k8s namespace
         kubernetes.core.k8s:
@@ -44,8 +44,8 @@
                     app: petclinic
                 spec:
                   containers:
-                  - image: "{{ DOCKER_VERSION }}"
-                  # - image: myroslavlevchyk/petclinic:latest
+#                  - image: "{{ DOCKER_VERSION }}"
+                  - image: myroslavlevchyk/petclinic:latest
                     name: petclinic
                     ports:
                     - containerPort: 8080
